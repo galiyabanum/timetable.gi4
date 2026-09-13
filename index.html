@@ -17,7 +17,7 @@ button{font:inherit;color:inherit}
 .tabs{display:flex;width:max-content;margin:0 0 20px;padding:4px;background:#e7eee9;border-radius:12px}.tab{border:0;background:transparent;padding:10px 20px;border-radius:9px;font-weight:750;cursor:pointer;transition:background-color 160ms ease,color 160ms ease,transform 120ms var(--ease)}.tab.active{background:var(--green);color:#fff}.tab:active{transform:scale(.97)}
 .panel{border:1px solid var(--line);border-radius:20px;background:var(--paper);padding:30px;box-shadow:0 8px 30px rgba(29,44,70,.05)}
 .panel-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:26px}.panel h2{font-size:30px;margin:0;letter-spacing:-.03em}.panel-note{margin:7px 0 0;color:var(--muted)}
-.teachers-panel{display:none}
+.teachers-panel,.days-panel{display:none}
 .class-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(108px,1fr));gap:14px}
 .choice{position:relative;min-height:78px;border:1px solid #c8dacd;border-radius:14px;background:var(--green-soft);color:var(--ink);font-size:24px;font-weight:800;cursor:pointer;transition:transform 160ms var(--ease),box-shadow 160ms ease,border-color 160ms ease,background-color 160ms ease}
 .choice:active{transform:scale(.97)}
@@ -25,6 +25,7 @@ button{font:inherit;color:inherit}
 .teacher-tools{display:flex;align-items:center;gap:12px}.teacher-search{width:min(320px,45vw);border:1px solid var(--line);border-radius:13px;background:#fff;padding:12px 15px;font:inherit;color:var(--ink);outline:none}.teacher-search:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(12,95,42,.1)}
 .teacher-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
 .teacher-grid .choice{min-height:62px;padding:12px 15px;text-align:left;background:#fff;font-size:16px;font-weight:700}.teacher-grid .choice::after{content:'→';position:absolute;right:15px;color:var(--green)}
+.day-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.day-grid .choice{min-height:68px;font-size:18px}.day-overview{min-width:1800px}.day-overview thead th{position:sticky;top:0;z-index:2}.day-overview thead .lesson-no{left:0;z-index:4;background:var(--green)!important}.day-overview tbody td{font-size:10px;padding:6px}.day-overview .subject{font-size:10px}.day-overview .teacher-line,.day-overview .room-line{font-size:9px}.day-overview .entry+.entry{margin-top:5px;padding-top:5px}
 .schedule{display:none;padding:24px clamp(14px,3vw,44px) 50px}
 .schedule-topbar{border-bottom:1px solid var(--line);padding:12px 4px 22px;margin-bottom:18px;display:flex;align-items:center;gap:16px}.schedule-title{margin:0;font-size:clamp(28px,3vw,44px);line-height:1;letter-spacing:-.04em;font-weight:850}.home-button,.share-button,.pdf-button{border:1px solid var(--line);border-radius:10px;background:#fff;padding:11px 15px;font-size:14px;font-weight:720;cursor:pointer;transition:transform 120ms var(--ease),background-color 160ms ease}.home-button:active,.share-button:active,.pdf-button:active{transform:scale(.97)}.share-button{margin-left:auto;background:var(--green);border-color:var(--green);color:#fff}.pdf-button{border-color:var(--green);color:var(--green)}.schedule-sub{display:none}.print-head{display:none}
 .table-scroll{overflow-x:auto;padding:3px 2px 18px}
@@ -38,9 +39,10 @@ button{font:inherit;color:inherit}
 .subject{font-size:12px;font-weight:800;line-height:1.2}.teacher-line,.room-line{line-height:1.25;color:#59615b;margin-top:2px;font-size:11px;font-weight:400}.group{display:inline-block;margin-top:3px;padding:1px 5px;border-radius:99px;background:#edf1ee;font-size:9px;color:#68706a}
 .empty{color:#9aa5b8}
 .maintenance{min-height:100vh;display:grid;place-items:center;padding:24px}.maintenance-card{width:min(680px,100%);padding:48px;border:1px solid var(--line);border-radius:24px;background:#fff;text-align:center;box-shadow:0 18px 50px rgba(12,95,42,.08)}.maintenance-mark{width:54px;height:54px;margin:0 auto 20px;display:grid;place-items:center;border-radius:15px;background:var(--green);color:#fff;font-size:25px;font-weight:900}.maintenance-card h1{margin:0;font-size:clamp(30px,5vw,48px);letter-spacing:-.04em}.maintenance-card p{max-width:520px;margin:18px auto 0;color:#59615b;font-size:17px;line-height:1.6}.loading-note{margin-top:18px;color:#7c857e;font-size:13px}
-@media(max-width:700px){.home{padding-top:34px}.panel{padding:22px 16px;border-radius:16px}.panel-head{align-items:stretch;flex-direction:column}.teacher-tools,.teacher-search{width:100%}.class-grid{grid-template-columns:repeat(3,1fr)}.choice{min-height:70px}.teacher-grid{grid-template-columns:1fr}.schedule{padding:12px 6px 30px}.schedule-topbar{flex-wrap:wrap}.schedule-sub{width:100%;order:4}.share-button{margin-left:0}.schedule-table{border-spacing:7px 6px}}
+@media(max-width:700px){.home{padding-top:34px}.tabs{width:100%;overflow-x:auto}.tab{flex:1;padding:10px 12px}.panel{padding:22px 16px;border-radius:16px}.panel-head{align-items:stretch;flex-direction:column}.teacher-tools,.teacher-search{width:100%}.class-grid{grid-template-columns:repeat(3,1fr)}.day-grid{grid-template-columns:1fr 1fr}.choice{min-height:70px}.teacher-grid{grid-template-columns:1fr}.schedule{padding:12px 6px 30px}.schedule-topbar{flex-wrap:wrap}.schedule-sub{width:100%;order:4}.share-button{margin-left:0}.schedule-table{border-spacing:7px 6px}}
 @media(prefers-reduced-motion:reduce){.choice,.tab,.home-button{transition:none}}
 @media print{@page{size:A4 landscape;margin:6mm}html,body{background:#fff;color:#000}.home,.schedule-topbar{display:none!important}.schedule{display:block!important;padding:0}.print-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:3mm;border-bottom:1px solid #000;padding-bottom:2mm}.print-head strong{font-size:13pt}.print-head span{font-size:8pt}.table-scroll{overflow:visible;padding:0}.schedule-table{width:100%;min-width:0;border-spacing:1.5mm 1mm}.schedule-table thead th{height:7mm;padding:1mm 2mm;border:1px solid #000;border-radius:0;background:#fff!important;color:#000;font-size:7.5pt}.schedule-table .lesson-no{width:8mm}.schedule-table tbody .lesson-no{position:static;height:auto;border:1px solid #000;border-radius:0;background:#fff;color:#000;font-size:7pt}.schedule-table tbody td,.schedule-table tbody td:nth-child(n){height:auto;min-height:0;padding:1mm 1.5mm;border:1px solid #000;border-radius:0;background:#fff;font-size:6.4pt;line-height:1.12}.entry+.entry{margin-top:1mm;padding-top:1mm;border-top:1px dotted #000}.subject{font-size:6.7pt}.teacher-line,.room-line{margin-top:.6mm;color:#000}.group{margin-top:.6mm;padding:0;background:none;color:#000;font-size:5.7pt}}
+@media print{.day-overview{width:100%;min-width:0!important;border-spacing:.5mm}.day-overview thead th{font-size:4.2pt;padding:.5mm}.day-overview tbody td{font-size:3.8pt;padding:.45mm}.day-overview .subject{font-size:4pt}.day-overview .teacher-line,.day-overview .room-line{font-size:3.5pt}.day-overview .entry+.entry{margin-top:.4mm;padding-top:.4mm}}
 </style>
 </head>
 <body>
@@ -49,7 +51,7 @@ button{font:inherit;color:inherit}
   <section id="homePage" class="page home">
     <div class="hero"><p class="school-name">Гимназия-интернат №4</p><h1 class="home-title">Расписание уроков</h1></div>
     <div class="chooser">
-      <nav class="tabs" aria-label="Выбор типа расписания"><button class="tab active" id="classesTab" type="button">Классы</button><button class="tab" id="teachersTab" type="button">Учителя</button></nav>
+      <nav class="tabs" aria-label="Выбор типа расписания"><button class="tab active" id="classesTab" type="button">Классы</button><button class="tab" id="teachersTab" type="button">Учителя</button><button class="tab" id="daysTab" type="button" hidden>По дням</button></nav>
       <section id="classesPanel" class="panel classes-panel">
         <div class="panel-head"><div><h2>Выберите класс</h2><p class="panel-note">Расписание на всю неделю</p></div></div>
         <div id="classGrid" class="class-grid"></div>
@@ -57,6 +59,10 @@ button{font:inherit;color:inherit}
       <section id="teachersPanel" class="panel teachers-panel">
         <div class="panel-head"><div><h2>Преподаватели</h2><p class="panel-note">Личное расписание учителя</p></div><div class="teacher-tools"><input id="teacherSearch" class="teacher-search" type="search" placeholder="Найти по фамилии…" aria-label="Найти учителя"></div></div>
         <div id="teacherGrid" class="teacher-grid"></div>
+      </section>
+      <section id="daysPanel" class="panel days-panel">
+        <div class="panel-head"><div><h2>Выберите день недели</h2><p class="panel-note">Все классы и уроки на одном экране</p></div></div>
+        <div id="dayGrid" class="day-grid"></div>
       </section>
     </div>
   </section>
@@ -75,7 +81,7 @@ button{font:inherit;color:inherit}
 <script>
 const SUPABASE_URL="https://xcvmtxqcwhkwjxmacmcx.supabase.co";
 const SUPABASE_KEY="sb_publishable_pvw8EXJgOXbT4_lexvQ1Eg_NM6-PXCj";
-let DATA=[];
+let DATA=[],DAYS_FEATURE_ENABLED=false,VISIBLE_DAYS=[];
 const DAYS=["Пн","Вт","Ср","Чт","Пт","Сб"];
 const FULL={Пн:"понедельник",Вт:"вторник",Ср:"среда",Чт:"четверг",Пт:"пятница",Сб:"суббота"};
 const cleanClass=value=>String(value||"").replace(/\s+/g,"");
@@ -83,19 +89,21 @@ let classes=[],teachers=[];
 const esc=value=>String(value??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
 function addButtons(target,values,type){
   const root=document.getElementById(target);
-  values.forEach(value=>{const button=document.createElement("button");button.type="button";button.className="choice";button.textContent=type==="class"?cleanClass(value):value;button.onclick=()=>showSchedule(type,value);root.appendChild(button)});
+  values.forEach(value=>{const button=document.createElement("button");button.type="button";button.className="choice";button.textContent=type==="class"?cleanClass(value):type==="day"?FULL[value][0].toUpperCase()+FULL[value].slice(1):value;button.onclick=()=>showSchedule(type,value);root.appendChild(button)});
 }
-function preparePublishedSchedule(){classes=[...new Set(DATA.map(x=>x["Класс"]).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ru",{numeric:true}));teachers=[...new Set(DATA.map(x=>x["Учитель"]).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ru"));document.getElementById("classGrid").innerHTML="";document.getElementById("teacherGrid").innerHTML="";addButtons("classGrid",classes,"class");addButtons("teacherGrid",teachers,"teacher");document.getElementById("maintenancePage").style.display="none";document.getElementById("homePage").style.display="block";openHashSchedule()}
+function preparePublishedSchedule(){classes=[...new Set(DATA.map(x=>x["Класс"]).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ru",{numeric:true}));teachers=[...new Set(DATA.map(x=>x["Учитель"]).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ru"));document.getElementById("classGrid").innerHTML="";document.getElementById("teacherGrid").innerHTML="";document.getElementById("dayGrid").innerHTML="";addButtons("classGrid",classes,"class");addButtons("teacherGrid",teachers,"teacher");addButtons("dayGrid",VISIBLE_DAYS,"day");document.getElementById("daysTab").hidden=!DAYS_FEATURE_ENABLED||!VISIBLE_DAYS.length;document.getElementById("maintenancePage").style.display="none";document.getElementById("homePage").style.display="block";openHashSchedule()}
 function selectTab(type){
-  const classesActive=type==="classes";
-  document.getElementById("classesPanel").style.display=classesActive?"block":"none";
-  document.getElementById("teachersPanel").style.display=classesActive?"none":"block";
-  document.getElementById("classesTab").classList.toggle("active",classesActive);
-  document.getElementById("teachersTab").classList.toggle("active",!classesActive);
-  if(!classesActive)document.getElementById("teacherSearch").focus();
+  document.getElementById("classesPanel").style.display=type==="classes"?"block":"none";
+  document.getElementById("teachersPanel").style.display=type==="teachers"?"block":"none";
+  document.getElementById("daysPanel").style.display=type==="days"?"block":"none";
+  document.getElementById("classesTab").classList.toggle("active",type==="classes");
+  document.getElementById("teachersTab").classList.toggle("active",type==="teachers");
+  document.getElementById("daysTab").classList.toggle("active",type==="days");
+  if(type==="teachers")document.getElementById("teacherSearch").focus();
 }
 document.getElementById("classesTab").onclick=()=>selectTab("classes");
 document.getElementById("teachersTab").onclick=()=>selectTab("teachers");
+document.getElementById("daysTab").onclick=()=>selectTab("days");
 document.getElementById("teacherSearch").addEventListener("input",event=>{const query=event.target.value.trim().toLocaleLowerCase("ru");document.querySelectorAll("#teacherGrid .choice").forEach(button=>button.style.display=button.textContent.toLocaleLowerCase("ru").includes(query)?"":"none")});
 function itemsFor(type,value,day,lesson){return DATA.filter(x=>x["День"]===day&&Number(x["Урок"])===lesson&&(type==="class"?x["Класс"]===value:x["Учитель"]===value)).sort((a,b)=>String(a["Класс"]).localeCompare(String(b["Класс"]),"ru",{numeric:true}))}
 function entry(item,type){
@@ -107,22 +115,30 @@ function entry(item,type){
 }
 function showSchedule(type,value){
   document.getElementById("homePage").style.display="none";document.getElementById("schedulePage").style.display="block";
-  document.getElementById("scheduleTitle").textContent=type==="class"?"Класс "+cleanClass(value):value;
-  document.getElementById("printTitle").textContent=type==="class"?"Расписание класса "+cleanClass(value):"Расписание учителя "+value;
+  const dayTitle=type==="day"?FULL[value][0].toUpperCase()+FULL[value].slice(1):"";
+  document.getElementById("scheduleTitle").textContent=type==="class"?"Класс "+cleanClass(value):type==="teacher"?value:dayTitle+" · вся гимназия";
+  document.getElementById("printTitle").textContent=type==="class"?"Расписание класса "+cleanClass(value):type==="teacher"?"Расписание учителя "+value:"Расписание всей гимназии · "+dayTitle;
   document.getElementById("scheduleSub").textContent="";
+  const table=document.getElementById("scheduleTable");table.classList.toggle("day-overview",type==="day");table.style.minWidth="";
+  if(type==="day"){
+    const filtered=DATA.filter(x=>x["День"]===value),maxLesson=Math.max(1,...filtered.map(x=>Number(x["Урок"])||0));
+    let html='<thead><tr><th class="lesson-no">№</th>'+classes.map(c=>'<th>'+esc(cleanClass(c))+'</th>').join('')+'</tr></thead><tbody>';
+    for(let lesson=1;lesson<=maxLesson;lesson++){html+='<tr><th class="lesson-no">'+lesson+'</th>'+classes.map(c=>{const items=filtered.filter(x=>x["Класс"]===c&&Number(x["Урок"])===lesson);return '<td>'+(items.length?items.map(x=>entry(x,"class")).join(''):'<span class="empty">—</span>')+'</td>'}).join('')+'</tr>'}
+    table.style.minWidth=Math.max(1200,classes.length*122+44)+"px";table.innerHTML=html+'</tbody>';history.replaceState(null,"",'#day-'+encodeURIComponent(value));window.scrollTo(0,0);return;
+  }
   const filtered=DATA.filter(x=>type==="class"?x["Класс"]===value:x["Учитель"]===value);
   const maxLesson=Math.max(1,...filtered.map(x=>Number(x["Урок"])||0));
   let html='<thead><tr><th class="lesson-no"></th>'+DAYS.map((d,i)=>'<th class="'+(i%2===0?'day-col':'')+'">'+FULL[d]+'</th>').join('')+'</tr></thead><tbody>';
   for(let lesson=1;lesson<=maxLesson;lesson++){html+='<tr><th class="lesson-no">'+lesson+'</th>'+DAYS.map((d,i)=>{const items=itemsFor(type,value,d,lesson);return '<td class="'+(i%2===0?'day-col':'')+'">'+(items.length?items.map(x=>entry(x,type)).join(''):'<span class="empty">—</span>')+'</td>'}).join('')+'</tr>'}
-  document.getElementById("scheduleTable").innerHTML=html;history.replaceState(null,"",'#'+(type==='class'?'class-':'teacher-')+encodeURIComponent(value));window.scrollTo(0,0)
+  table.innerHTML=html;history.replaceState(null,"",'#'+(type==='class'?'class-':'teacher-')+encodeURIComponent(value));window.scrollTo(0,0)
 }
 function goHome(){document.getElementById("schedulePage").style.display="none";document.getElementById("homePage").style.display="block";history.replaceState(null,"",location.pathname+location.search);window.scrollTo(0,0)}
 document.getElementById("homeButton").onclick=goHome;
 document.getElementById("shareButton").onclick=async()=>{const button=document.getElementById("shareButton");const url=location.href;try{await navigator.clipboard.writeText(url)}catch(error){const area=document.createElement("textarea");area.value=url;document.body.appendChild(area);area.select();document.execCommand("copy");area.remove()}button.textContent="Ссылка скопирована";setTimeout(()=>button.textContent="Скопировать ссылку",1800)};
 document.getElementById("pdfButton").onclick=()=>window.print();
 window.addEventListener("popstate",()=>{if(!location.hash)goHome()});
-function openHashSchedule(){if(location.hash){const raw=decodeURIComponent(location.hash.slice(1));const type=raw.startsWith("teacher-")?"teacher":"class";const value=raw.replace(/^(teacher|class)-/,"");if((type==="class"?classes:teachers).includes(value))showSchedule(type,value)}}
-async function syncOnline(){try{const response=await fetch(SUPABASE_URL+"/rest/v1/schedule_state?id=eq.1&select=data,updated_at,published",{headers:{apikey:SUPABASE_KEY}});if(!response.ok)throw new Error();const online=(await response.json())[0];if(online&&online.published===true&&Array.isArray(online.data)&&online.data.length){DATA=online.data;preparePublishedSchedule();return}document.getElementById("loadingNote").textContent=""}catch(error){document.getElementById("loadingNote").textContent="Не удалось проверить обновления. Попробуйте открыть страницу позже."}}
+function openHashSchedule(){if(location.hash){const raw=decodeURIComponent(location.hash.slice(1));const type=raw.startsWith("teacher-")?"teacher":raw.startsWith("day-")?"day":"class";const value=raw.replace(/^(teacher|class|day)-/,"");const allowed=type==="class"?classes:type==="teacher"?teachers:DAYS_FEATURE_ENABLED?VISIBLE_DAYS:[];if(allowed.includes(value))showSchedule(type,value)}}
+async function syncOnline(){try{const response=await fetch(SUPABASE_URL+"/rest/v1/schedule_state?id=eq.1&select=data,updated_at,published,day_view_enabled,visible_days",{headers:{apikey:SUPABASE_KEY}});if(!response.ok)throw new Error();const online=(await response.json())[0];if(online&&online.published===true&&Array.isArray(online.data)&&online.data.length){DATA=online.data;DAYS_FEATURE_ENABLED=online.day_view_enabled===true;VISIBLE_DAYS=Array.isArray(online.visible_days)?online.visible_days.filter(day=>DAYS.includes(day)):[];preparePublishedSchedule();return}document.getElementById("loadingNote").textContent=""}catch(error){document.getElementById("loadingNote").textContent="Не удалось проверить обновления. Попробуйте открыть страницу позже."}}
 syncOnline();
 </script>
 </body>
